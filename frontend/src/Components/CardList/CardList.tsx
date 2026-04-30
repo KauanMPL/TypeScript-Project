@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '../Card/Card';
 
-const CardList = () => {
+const CardList: React.FC<Props> = (props: Props): JSX.Element => {
     return (
         <div>
             <Card companyName="Apple Inc." ticker="AAPL" price={150} />
