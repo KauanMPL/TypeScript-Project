@@ -9,6 +9,8 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/jest": "^27.5.2",
     "@types/node": "^16.18.126",
+    "axios": "^1.15.2",
+    "dotenv": "^17.4.2",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
     "react-scripts": "5.0.1",
@@ -40,6 +42,7 @@
     ]
   },
   "devDependencies": {
+    "@types/axios": "^0.9.36",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3"
   }
