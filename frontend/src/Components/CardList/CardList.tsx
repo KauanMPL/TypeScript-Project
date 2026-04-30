@@ -1,14 +1,16 @@
-import React from 'react';
-import Card from '../Card/Card';
+import React from 'react'
+import Card from '../Card/Card'
 
-const CardList: React.FC<Props> = (props: Props): JSX.Element => {
-    return (
-        <div>
-            <Card companyName="Apple Inc." ticker="AAPL" price={150} />
-            <Card companyName="Microsoft" ticker="MSFT" price={250} />
-            <Card companyName="Tesla" ticker="TESLA" price={280} />
-        </div>
-    );
-};
+interface Props {}
 
-export default CardList;
+const CardList: React.FC<Props> = (props: Props) => {
+  return (
+    <div>
+      <Card companyName="Apple" ticker="AAPL" price={100} />
+      <Card companyName="Microsoft" ticker="MSFT" price={200} />
+      <Card companyName="Tesla" ticker="TSLA" price={300} />
+    </div>
+  )
+}
+
+export default CardList
