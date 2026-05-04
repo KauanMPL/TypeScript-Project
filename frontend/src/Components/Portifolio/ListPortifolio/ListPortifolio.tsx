@@ -1,18 +1,21 @@
-import React from "react";
+import React, { SyntheticEvent } from "react";
 import CardPortifolio from "../CardPortifolio/CardPortifolio";
 
 interface Props {
-  portfolioValues: string[];
+  portfolioValue: string[];
+  onPortifolioDelete: (e: SyntheticEvent) => void;
 }
 
-const ListPortifolio = ({ portfolioValues }: Props) => {
+const ListPortifolio = ({ portfolioValue, onPortifolioDelete }: Props) => {
   return (
     <>
       <h3>My Portfolio</h3>
       <ul>
-        {portfolioValues &&
-          portfolioValues.map((portfolioValue) => (
-            <CardPortifolio key={portfolioValue} portfolioValues={portfolioValue} />
+        {portfolioValue &&
+          portfolioValue.map((portfolioValue) => (
+            <CardPortifolio
+              portfolioValue={portfolioValue}
+              onPortifolioDelete={onPortifolioDelete}/>
           ))}
       </ul>
     </>

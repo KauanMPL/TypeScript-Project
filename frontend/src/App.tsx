@@ -8,7 +8,7 @@ import { searchCompanies } from "./api";
 import ListPortifolio from "./Components/Portifolio/ListPortifolio/ListPortifolio";
 function App() {
   const [search, setSearch] = useState<string>("");
-  const [portfolioValues, setPortfolioValues] = useState<String[]>([]);
+  const [portfolioValue, setPortfolioValues] = useState<string[]>([]);
   const [searchResult, setSearchResult] = useState<CompanySearch[]>([]);
   const [serverError, setServerError] = useState<string>("");
 
@@ -18,12 +18,20 @@ function App() {
 
   const onPortifolioCreate = (e: any) => {
     e.preventDefault();
-    const exists = portfolioValues.find((value) => value === e.target[0].value);
+    const exists = portfolioValue.find((value) => value === e.target[0].value);
     if (exists) {
       return;
     }
-    const updatedPortfolio = [...portfolioValues, e.target[0].value];
+    const updatedPortfolio = [...portfolioValue, e.target[0].value];
     setPortfolioValues(updatedPortfolio);
+  };
+
+  const onPortifolioDelete = (e: any) => {
+    e.preventDefault();
+    const removed = portfolioValue.filter((value) => {
+      return value !== e.target[0].value;
+    });
+    setPortfolioValues(removed);
   };
 
   const onSearchSubmit = async (e: SyntheticEvent) => {
@@ -40,7 +48,10 @@ function App() {
     <div className="App">
       <Search onSearchSubmit={onSearchSubmit} search={search} handleSearchChange={handleSearchChange} />
       {serverError && <h1>{serverError}</h1>}
-      <ListPortifolio portfolioValues={portfolioValues} />
+      <ListPortifolio
+        portfolioValue={portfolioValue}
+        onPortifolioDelete={onPortifolioDelete} />
+
       <CardList searchResults={searchResult} onPortifolioCreate={onPortifolioCreate} />
     </div>
   );
