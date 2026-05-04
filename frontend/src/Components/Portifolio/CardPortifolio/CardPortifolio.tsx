@@ -1,18 +1,24 @@
-import React, { SyntheticEvent } from "react";
-import DeletePortifolio from "../DeletePortifolio/DeletePortifolio";
+import React, { SyntheticEvent } from 'react'
+import DeletePortfolio from '../DeletePortifolio/DeletePortifolio';
+import { Link } from 'react-router-dom';
 
 interface Props {
   portfolioValue: string;
-  onPortifolioDelete: (e: SyntheticEvent) => void;
+  onPortfolioDelete: (e: SyntheticEvent) => void;
 }
 
-const CardPortifolio = ({ portfolioValue, onPortifolioDelete }: Props) => {
+const CardPortfolio = ({ portfolioValue, onPortfolioDelete }: Props) => {
   return (
-    <>
-      <h4>{portfolioValue}</h4>
-      <DeletePortifolio onPortifolioDelete={onPortifolioDelete} portifolioValue={portfolioValue}/>
-    </>
-  );
-};
+    <div className="flex flex-col w-full p-8 space-y-4 text-center rounded-lg shadow-lg md:w-1/3">
+      <Link to={`/company/${portfolioValue}`} className="pt-6 text-xl font-bold">
+        {portfolioValue}
+      </Link>
+      <DeletePortfolio
+        portifolioValue={portfolioValue}
+        onPortifolioDelete={onPortfolioDelete}
+      />
+    </div>
+  )
+}
 
-export default CardPortifolio;
+export default CardPortfolio
