@@ -1,6 +1,6 @@
-import React from 'react';
-import logo from "./logo.png";
-import { Link } from 'react-router';
+import React from 'react'
+import logo from "./logo.png"
+import { Link } from 'react-router'
 interface Props  {}
 
 const Navbar = (props: Props) => {
