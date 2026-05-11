@@ -1,10 +1,16 @@
 import React, { useEffect, useState } from "react";
+import { useOutletContext } from "react-router-dom";
 import { CompanyKeyMetrics } from "../../company";
-import { useOutletContext } from "react-router";
 import { getKeyMetrics } from "../../api";
 import RatioList from "../RatioList/RatioList";
+import Spinner from "../Snippers/Snipper";
+import {
+  formatLargeNonMonetaryNumber,
+  formatRatio,
+} from "../../Helpers/NumberFormatting";
+import StockComment from "../StockComment/StockComment";
 
-interface Props {}
+type Props = {};
 
 const tableConfig = [
   {
@@ -79,31 +85,24 @@ const CompanyProfile = (props: Props) => {
   const ticker = useOutletContext<string>();
   const [companyData, setCompanyData] = useState<CompanyKeyMetrics>();
   useEffect(() => {
-    const getCompanyKeyMetrics = async () => {
+    const getCompanyKeyRatios = async () => {
       const value = await getKeyMetrics(ticker);
       setCompanyData(value?.data[0]);
     };
-    getCompanyKeyMetrics();
+    getCompanyKeyRatios();
   }, []);
   return (
     <>
       {companyData ? (
         <>
           <RatioList config={tableConfig} data={companyData} />
+          <StockComment stockSymbol={ticker} />
         </>
       ) : (
-        <>Loading...</>
+        <Spinner />
       )}
     </>
   );
 };
 
 export default CompanyProfile;
-
-function formatRatio(capexPerShareTTM: number) {
-  throw new Error("Function not implemented.");
-}
-function formatLargeNonMonetaryNumber(marketCapTTM: number) {
-  throw new Error("Function not implemented.");
-}
-

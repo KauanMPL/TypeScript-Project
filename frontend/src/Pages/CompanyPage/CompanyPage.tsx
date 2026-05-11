@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import Sidebar from "../../Components/SideBar/SideBar";
 import CompanyDashboard from "../../Components/CompanyDashBoard/CompanyDashBoard";
 import Tile from "../../Tile/Tile";
+import Spinner from "../../Components/Snippers/Snipper";
 
 interface Props { }
 
@@ -37,7 +38,7 @@ const CompanyPage = (props: Props) => {
           </CompanyDashboard>
         </div>
       ) : (
-        <div>Company not found</div>
+        <Spinner />
       )};
     </>
   );
