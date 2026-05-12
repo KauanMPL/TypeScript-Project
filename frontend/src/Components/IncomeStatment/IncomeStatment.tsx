@@ -3,11 +3,11 @@ import { useOutletContext } from "react-router-dom";
 import Table from "../Table/Table";
 import { CompanyIncomeStatement } from "../../company";
 import { getIncomeStatement } from "../../api";
-import Spinner from "../Spinners/Spinner";
+import Spinner from "../Snippers/Snipper";
 import {
   formatLargeMonetaryNumber,
   formatRatio,
-} from "../../Helpers/NumberFormatting";
+} from "../../Helpers/NumerFormatting";
 
 type Props = {};
 

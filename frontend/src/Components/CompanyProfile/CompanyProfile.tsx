@@ -7,7 +7,7 @@ import Spinner from "../Snippers/Snipper";
 import {
   formatLargeNonMonetaryNumber,
   formatRatio,
-} from "../../Helpers/NumberFormatting";
+} from "../../Helpers/NumerFormatting";
 import StockComment from "../StockComment/StockComment";
 
 type Props = {};

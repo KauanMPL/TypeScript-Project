@@ -4,7 +4,7 @@ import { CompanyCashFlow } from "../../company";
 import { getCashFlow } from "../../api";
 import Table from "../Table/Table";
 import Spinner from "../Snippers/Snipper";
-import { formatLargeMonetaryNumber } from "../../Helpers/NumberFormatting";
+import { formatLargeMonetaryNumber } from "../../Helpers/NumerFormatting";
 
 type Props = {};
 

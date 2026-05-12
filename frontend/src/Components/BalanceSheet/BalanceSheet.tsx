@@ -4,12 +4,11 @@ import { useOutletContext } from "react-router-dom";
 import RatioList from "../RatioList/RatioList";
 import { getBalanceSheet } from "../../api";
 import Table from "../Table/Table";
-import Snipper from "../Snippers/Snipper";
-
+import Spinner from "../Snippers/Snipper";
 import {
   formatLargeMonetaryNumber,
   formatLargeNonMonetaryNumber,
-} from "../../Helpers/NumberFormatting";
+} from "../../Helpers/NumerFormatting";
 
 type Props = {};
 
@@ -96,7 +95,7 @@ const BalanceSheet = (props: Props) => {
       {companyData ? (
         <RatioList config={config} data={companyData} />
       ) : (
-        <Snipper/>
+        <Spinner />
       )}
     </>
   );

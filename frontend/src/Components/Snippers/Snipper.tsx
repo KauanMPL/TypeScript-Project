@@ -1,5 +1,5 @@
 import React from "react";
-import "./Spinner.css";
+import "./Snipper.css";
 import { ClipLoader } from "react-spinners";
 
 type Props = {
