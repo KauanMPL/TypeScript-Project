@@ -4,7 +4,7 @@ import HomePage from "../Pages/HomePage/HomePage";
 import CompanyPage from "../Pages/CompanyPage/CompanyPage";
 import SearchPage from "../Pages/SearchPage/SearchPage";
 import CompanyProfile from "../Components/CompanyProfile/CompanyProfile";
-import IncomeStatement from "../Components/IncomeStatement/IncomeStatement";
+import IncomeStatement from "../Components/IncomeStatment/IncomeStatment";
 import DesignGuide from "../Pages/DesignGuide/DesignGuide";
 import BalanceSheet from "../Components/BalanceSheet/BalanceSheet";
 import HistoricalDividend from "../Components/HistoricalDividend/HistoricalDividend";
